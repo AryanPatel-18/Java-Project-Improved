@@ -1,12 +1,3 @@
 registered
 IdNumber
 EnrollmentNumber
-STAP15
-STAP17
-STAP18
-STAP19
-STAP20
-STAP23
-STAP24
-STAP25
-STAP26
