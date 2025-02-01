@@ -12,6 +12,8 @@ public class Login implements Main{
     // All the objects for this class
     Scanner sc = new Scanner(System.in);
     Admin ad = new Admin();
+    Student s = new Student();
+    Proffessor p = new Proffessor();
 
     public void login(){
         System.out.print("Please enter your login id : ");
@@ -40,12 +42,17 @@ public class Login implements Main{
                 ad.Menu(id);
                 break;
             case 2:
-                // For the student mennu
+                // For the student menu
+                s.Menu(id);
                 break;
             case 3:
                 // For the Staff Menu
+                
+                break;
             case 4:
                 // For the professor Menu
+                p.Menu(id);
+                break;
             case 5:
                 // For the super menu
             default:

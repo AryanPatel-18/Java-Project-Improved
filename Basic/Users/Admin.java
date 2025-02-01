@@ -98,6 +98,8 @@ public class Admin implements Main{
                     break;
                 case 9:
                     // TO create Professor id
+                    c.callProffCreate(callGenerateStaffId());
+                    break;
                 case 10:
                     // To create Staff id
                 case 11:
@@ -255,8 +257,8 @@ public class Admin implements Main{
     }
 
     // A calling function to call the generate staff Id
-    public void callGenerateStaffId(){
-        generateStaffId();
+    public String callGenerateStaffId(){
+        return generateStaffId();
     }
 
     // Checking for already used staff ids

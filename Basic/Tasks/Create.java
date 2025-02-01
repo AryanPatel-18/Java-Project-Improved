@@ -9,6 +9,7 @@ public class Create implements Main{
     // All the objects for this class
     Scanner sc = new Scanner(System.in);
     Student s = new Student();
+    Create c = new Create();
 
     // To set the password of the user
     private void setPassword(String id, String path){
@@ -40,7 +41,7 @@ public class Create implements Main{
     }
 
     // To get the new id from the ids file
-    int getId(String path){
+    public int getId(String path){
         // For getting the id number from the database
         // Basically for checking how many ids we have created for each user category
         // All elminating any copies of ids dues to them having the same name
@@ -110,9 +111,76 @@ public class Create implements Main{
 
     }
 
+    // Create professor information
+    private void proffUserInfo( String staffId){
+        System.out.print("Enter the full name of the professor : ");
+        String name = sc.nextLine();
+        System.out.println("Enter the gender : ");
+        String gender = sc.next();
+        System.out.println("Enter the specialization : ");
+        String specialization = sc.next();
+        String id = "PF" + specialization + c.getId("Proffessor");
+        System.out.println("Enter the contact number : ");
+        String number = sc.next();
+        System.out.println("String enter the address : ");
+        String address = sc.next();
+
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Proffessor/" + id + ".txt"))) {
+            writer.write(id + System.lineSeparator());
+            writer.write(name + System.lineSeparator());
+            writer.write(gender + System.lineSeparator());
+            writer.write(specialization + System.lineSeparator());
+            writer.write(number + System.lineSeparator());
+            writer.write(address + System.lineSeparator());
+            writer.write(staffId + System.lineSeparator());
+        } catch (Exception e) {
+            System.out.print("There was a problem while writing the professor data");
+        }
+        registerUser(staffId, "Proffessor");
+        setPassword(staffId, "Proffessor");
+        createReminderFiles("Proffessor", staffId);
+    }
+
     // Function to call the private function studentUser
     public void callStudentUser(){
         studentUser();
     }
 
+    // To call the professor information function
+    public void callProffCreate(String staffId){
+        proffUserInfo(staffId);
+    }
+
+    private void createAdminId(String staffId){
+        System.out.print("Enter the full name of the professor : ");
+        String name = sc.nextLine();
+        System.out.println("Enter the gender : ");
+        String gender = sc.next();
+        System.out.println("Enter the specialization : ");
+        String specialization = sc.next();
+        String id = "PF" + specialization + c.getId("Proffessor");
+        System.out.println("Enter the contact number : ");
+        String number = sc.next();
+        System.out.println("String enter the address : ");
+        String address = sc.next();
+
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Proffessor/" + id + ".txt"))) {
+            writer.write(id + System.lineSeparator());
+            writer.write(name + System.lineSeparator());
+            writer.write(gender + System.lineSeparator());
+            writer.write(specialization + System.lineSeparator());
+            writer.write(number + System.lineSeparator());
+            writer.write(address + System.lineSeparator());
+            writer.write(staffId + System.lineSeparator());
+        } catch (Exception e) {
+            System.out.print("There was a problem while writing the professor data");
+        }
+        registerUser(staffId, "Proffessor");
+        setPassword(staffId, "Proffessor");
+        createReminderFiles("Proffessor", staffId);
+    }
+
+    public void callCreateAdId(String Staffid){
+        createAdminId(Staffid);
+    }
 }

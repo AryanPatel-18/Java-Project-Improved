@@ -108,7 +108,7 @@ public class Reminders implements Main{
     }
 
     // For displaying both public and private reminders
-    private void displayReminders(String id, String type, String path) {
+    public void displayReminders(String id, String type, String path) {
         try (BufferedReader reader = new BufferedReader(new FileReader("Reminders/" +path+"/" + type + "/" + id + ".txt"))) {
             String line;
 
