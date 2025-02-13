@@ -65,32 +65,6 @@ public class Create implements Main{
         }
     }
 
-    // To create the admin User
-    public void adminUser(){
-        // For creating admin user which requires a super user
-        String id = "";
-        while(true){
-            System.out.print("Enter the id : ");
-            id = sc.next();
-            if(!isExist("Admin",id)){
-                break;
-            }else{
-                System.out.println("This id already exists please try another one");
-            }
-        }
-        id = "AD" + id + getId("Admin");
-        // a.addInformation(id);
-        setPassword(id, "Admin");
-        registerUser(id, "Admin");
-        createReminderFiles("Admin", id);
-        // a.Menu(id);
-
-    }
-
-
-    // To get the info of the professor user
-
-
 
     // To create the user file
     private void studentUser(){
@@ -151,19 +125,19 @@ public class Create implements Main{
     }
 
     private void createAdminId(String staffId){
-        System.out.print("Enter the full name of the professor : ");
+        System.out.print("Enter the full name of the Admin : ");
         String name = sc.nextLine();
-        System.out.println("Enter the gender : ");
+        System.out.print("Enter the gender : ");
         String gender = sc.next();
-        System.out.println("Enter the specialization : ");
+        System.out.print("Enter the specialization : ");
         String specialization = sc.next();
-        String id = "PF" + specialization + getId("Proffessor");
-        System.out.println("Enter the contact number : ");
+        String id = "AD" + specialization + getId("Admin");
+        System.out.print("Enter the contact number : ");
         String number = sc.next();
-        System.out.println("String enter the address : ");
+        System.out.print("String enter the address : ");
         String address = sc.next();
 
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Proffessor/" + id + ".txt"))) {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Admin/" + id + ".txt"))) {
             writer.write(id + System.lineSeparator());
             writer.write(name + System.lineSeparator());
             writer.write(gender + System.lineSeparator());
@@ -174,9 +148,9 @@ public class Create implements Main{
         } catch (Exception e) {
             System.out.print("There was a problem while writing the professor data");
         }
-        registerUser(staffId, "Proffessor");
-        setPassword(staffId, "Proffessor");
-        createReminderFiles("Proffessor", staffId);
+        registerUser(id, "Admin");
+        setPassword(id, "Admin");
+        createReminderFiles("Admin", id);
     }
 
     public void callCreateAdId(String Staffid){
