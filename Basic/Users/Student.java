@@ -131,7 +131,7 @@ public class Student implements Main{
         System.out.println("\t\tWelcome " + id + "!\n");
 
         System.out.println("----- REMINDER -------");
-        r.displayReminders(id, "public","Student");
+        r.callDisplayReminder(id, "public","Student");
 
         while (true) {
             System.out.println("-------------------------------\n");

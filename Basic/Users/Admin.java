@@ -21,6 +21,11 @@ public class Admin implements Main{
 
     // Pending
     public void Menu(String id){
+        System.out.println("\n\n\n");
+        System.out.println("\t\tWelcome " + id + "!\n");
+
+        System.out.println("----- REMINDER -------");
+        r.callDisplayReminder(id, "public","Admin");
         while (true) {
             System.out.println("-------------------------------\n");
             System.out.println("1) Set Attendence");

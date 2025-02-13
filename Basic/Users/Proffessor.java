@@ -80,6 +80,12 @@ public class Proffessor implements Main {
     }
 
     public void Menu(String id) {  
+        System.out.println("\n\n\n");
+        System.out.println("\t\tWelcome " + id + "!\n");
+
+        System.out.println("----- REMINDER -------");
+        r.callDisplayReminder(id, "public","Proffessor");
+
         while(true){
             System.out.println("-------------------------------\n");
             System.out.println("1) Daily Attendence");
@@ -112,7 +118,7 @@ public class Proffessor implements Main {
                     r.clearReminders(id, "Proffessor"); 
                     break;
                 case 5:
-                    r.displayReminders(id, "Private", "Proffessor");
+                    r.callDisplayReminder(id, "Private", "Proffessor");
                     break;
                 case 6:
                     System.out.println("Exiting...");
