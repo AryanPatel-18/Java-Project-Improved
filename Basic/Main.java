@@ -56,7 +56,7 @@ public interface Main {
         }
         
         if (option == 4) {
-            designation = "Professor";
+            designation = "Proffessor";
         }
         
         if (option == 5) {

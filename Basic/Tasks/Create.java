@@ -101,10 +101,10 @@ public class Create implements Main{
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Proffessor/" + id + ".txt"))) {
             writer.write(id + System.lineSeparator());
             writer.write(name + System.lineSeparator());
-            writer.write(gender + System.lineSeparator());
             writer.write(specialization + System.lineSeparator());
             writer.write(number + System.lineSeparator());
             writer.write(address + System.lineSeparator());
+            writer.write(gender + System.lineSeparator());
             writer.write(staffId + System.lineSeparator());
         } catch (Exception e) {
             System.out.print("There was a problem while writing the professor data");
