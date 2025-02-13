@@ -128,7 +128,9 @@ public class Reminders implements Main{
                 System.out.println(conversion);
                 System.out.println("\n\n");
             }else{
+                System.out.println("\n");
                 System.out.println("No Reminders");
+                System.out.println("\n");
             }
         } catch (Exception e) {
             System.out.println("There was a problem while reading the " + type + " reminders");

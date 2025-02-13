@@ -14,6 +14,8 @@ public class Login implements Main{
     Admin ad = new Admin();
     Student s = new Student();
     Proffessor p = new Proffessor();
+    Staff st = new Staff();
+    Super sp = new Super();
 
     public void login(){
         System.out.print("Please enter your login id : ");
@@ -47,7 +49,7 @@ public class Login implements Main{
                 break;
             case 3:
                 // For the Staff Menu
-                
+                st.menu(id);
                 break;
             case 4:
                 // For the professor Menu
@@ -55,6 +57,8 @@ public class Login implements Main{
                 break;
             case 5:
                 // For the super menu
+                sp.Menu();
+                break;
             default:
                 System.out.println("Please enter a valid input");
                 break;

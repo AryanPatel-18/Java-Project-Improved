@@ -9,7 +9,6 @@ public class Create implements Main{
     // All the objects for this class
     Scanner sc = new Scanner(System.in);
     Student s = new Student();
-    Create c = new Create();
 
     // To set the password of the user
     private void setPassword(String id, String path){
@@ -119,7 +118,7 @@ public class Create implements Main{
         String gender = sc.next();
         System.out.println("Enter the specialization : ");
         String specialization = sc.next();
-        String id = "PF" + specialization + c.getId("Proffessor");
+        String id = "PF" + specialization + getId("Proffessor");
         System.out.println("Enter the contact number : ");
         String number = sc.next();
         System.out.println("String enter the address : ");
@@ -158,7 +157,7 @@ public class Create implements Main{
         String gender = sc.next();
         System.out.println("Enter the specialization : ");
         String specialization = sc.next();
-        String id = "PF" + specialization + c.getId("Proffessor");
+        String id = "PF" + specialization + getId("Proffessor");
         System.out.println("Enter the contact number : ");
         String number = sc.next();
         System.out.println("String enter the address : ");

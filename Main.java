@@ -1,12 +1,13 @@
 import java.util.Scanner;
+import Basic.Tasks.*;
 
 class Main{
     public static void main(String[] args){
 
         // All the objects for the main class
         Scanner sc = new Scanner(System.in);
-        // Login l = new Login(); 
-        // Create c = new Create();
+        Login l = new Login(); 
+        Create c = new Create();
 
         // First setup menu
             System.out.println("------------------------------------\n");
@@ -19,10 +20,10 @@ class Main{
     
             switch (option) {
                 case 1:
-                    // l.login();
+                    l.login();
                     break;
                 case 2:
-                    // c.studentUser();
+                    c.callStudentUser();
                     break;    
                 case 3:
                     sc.close();

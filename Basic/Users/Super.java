@@ -18,8 +18,7 @@ final public class Super implements Main {
             System.out.println("-------------------------------\n");
             System.out.println("1) Create admin id");
             System.out.println("2) Clear database");
-            System.out.println("3) Update admin id");
-            System.out.println("4) Exit");
+            System.out.println("3) Exit");
             System.out.println("--------------------------------\n\n");
 
             System.out.print("What do you want to do? : ");
@@ -33,8 +32,6 @@ final public class Super implements Main {
                     cl.clearDataBase();
                     break;
                 case 3:
-                    // Updating id left
-                case 4:
                     System.out.println("Exiting...");
                     System.exit(0);
                     break;

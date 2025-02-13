@@ -106,14 +106,14 @@ public interface Main {
     {
         // For writing in the private file
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("Reminders/" + path + "/Private/" + id + ".txt"))) {
-            writer.write("No reminders");
+            writer.write("");
         } catch (Exception e) {
             System.out.println("There was a problem while writing in the Private reminders file");
         }
 
         // For writing in the public reminder file
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("Reminders/" + path + "/Public/" + id + ".txt"))) {
-            writer.write("No reminders");
+            writer.write("");
         } catch (Exception e) {
             System.out.println("There was a problem while writing in the Public reminder file");
         }
@@ -130,8 +130,8 @@ public interface Main {
         
         // For creating the total attendence file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Attendence/" + id + ".txt"))){
-            writer.write("0");
-            writer.write(totalDays);
+            writer.write("0" + System.lineSeparator());
+            writer.write(totalDays + System.lineSeparator());
             writer.write("0");
         } catch (Exception e) {
             System.out.println("There was a problem while creating the attendence file");
