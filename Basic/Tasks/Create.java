@@ -88,14 +88,14 @@ public class Create implements Main{
     private void proffUserInfo( String staffId){
         System.out.print("Enter the full name of the professor : ");
         String name = sc.nextLine();
-        System.out.println("Enter the gender : ");
+        System.out.print("Enter the gender : ");
         String gender = sc.next();
-        System.out.println("Enter the specialization : ");
+        System.out.print("Enter the specialization : ");
         String specialization = sc.next();
         String id = "PF" + specialization + getId("Proffessor");
-        System.out.println("Enter the contact number : ");
+        System.out.print("Enter the contact number : ");
         String number = sc.next();
-        System.out.println("String enter the address : ");
+        System.out.print("String enter the address : ");
         String address = sc.next();
 
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Proffessor/" + id + ".txt"))) {
@@ -109,14 +109,45 @@ public class Create implements Main{
         } catch (Exception e) {
             System.out.print("There was a problem while writing the professor data");
         }
-        registerUser(staffId, "Proffessor");
-        setPassword(staffId, "Proffessor");
-        createReminderFiles("Proffessor", staffId);
+        registerUser(id, "Proffessor");
+        setPassword(id, "Proffessor");
+        createReminderFiles("Proffessor", id);
     }
 
     // Function to call the private function studentUser
     public void callStudentUser(){
         studentUser();
+    }
+
+    private void createStaffId(String staffId){
+        System.out.print("Enter the full name of the professor : ");
+        String name = sc.nextLine();
+        System.out.print("Enter the gender : ");
+        String gender = sc.next();
+        String firstName[] = name.split(" ");
+        String id = "SF" +  firstName[0] + getId("Proffessor");
+        System.out.print("Enter the contact number : ");
+        String number = sc.next();
+        System.out.print("String enter the address : ");
+        String address = sc.next();
+
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Proffessor/" + id + ".txt"))) {
+            writer.write(id + System.lineSeparator());
+            writer.write(name + System.lineSeparator());
+            writer.write(gender + System.lineSeparator());
+            writer.write(number + System.lineSeparator());
+            writer.write(address + System.lineSeparator());
+            writer.write(staffId + System.lineSeparator());
+        } catch (Exception e) {
+            System.out.print("There was a problem while writing the professor data");
+        }
+        registerUser(id, "Staff");
+        setPassword(id, "Staff");
+        createReminderFiles("Staff", id);
+    }
+
+    public void callStaffId(String staffId){
+        createStaffId(staffId);
     }
 
     // To call the professor information function

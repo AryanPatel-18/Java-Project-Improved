@@ -49,8 +49,9 @@ public class Reminders implements Main{
         if(option == 3){type = "Staff";}
 
         // Getting the message input
-        System.out.print("Please enter the message");
+        System.out.print("Please enter the message : ");
         String message = sc.nextLine();
+        sc.next();
         StringBuilder ids = new StringBuilder();
 
         // Getting all the ids according to the entered option from the registered.txt file in their respective folders

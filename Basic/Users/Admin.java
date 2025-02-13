@@ -38,8 +38,7 @@ public class Admin implements Main{
             System.out.println("8) Delete User");
             System.out.println("9) Create Proffessor id");
             System.out.println("10) Create Staff id");
-            System.out.println("11) Create Student id");
-            System.out.println("12) Exit");
+            System.out.println("11) Exit");
             System.out.println("--------------------------------\n\n");
 
             System.out.print("What do you want to do? : ");
@@ -54,7 +53,7 @@ public class Admin implements Main{
                     while(true){
                         System.out.print("Please enter the id of the student : ");
                         inputId = sc.next();
-                        if(!idExists(inputId, "Student")){
+                        if(idExists(inputId, "Student")){
                             break;
                         }else{
                             System.out.println("This id does not exist please try another id!");
@@ -70,6 +69,7 @@ public class Admin implements Main{
                 case 2:
                     // To send Public Message
                     r.sendPublicReminder();
+                    break;
                 case 3:
                     // To send Private Message
                     r.sendReminder(id);
@@ -107,10 +107,9 @@ public class Admin implements Main{
                     break;
                 case 10:
                     // To create Staff id
-                case 11:
-                    c.callStudentUser();
+                    c.callStaffId(callGenerateStaffId());
                     break;
-                case 12:
+                case 11:
                     System.out.println("Exiting...");
                     sc.close();
                     System.exit(0);
@@ -222,7 +221,7 @@ public class Admin implements Main{
     }
     // For deleting a user
     private void deleteUser(){
-        System.out.print("Enter the id you want to delete");
+        System.out.print("Enter the id you want to delete : ");
         String inputId = sc.next();
         int option = checkPermission(inputId);
         String designation = getDesignation(option);
