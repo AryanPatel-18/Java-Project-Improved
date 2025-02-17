@@ -48,10 +48,13 @@ public class Reminders implements Main{
         if(option == 2){type = "Proffessor";}
         if(option == 3){type = "Staff";}
 
+
         // Getting the message input
         System.out.print("Please enter the message : ");
+        sc.nextLine();
         String message = sc.nextLine();
-        sc.next();
+        
+
         StringBuilder ids = new StringBuilder();
 
         // Getting all the ids according to the entered option from the registered.txt file in their respective folders
@@ -71,10 +74,11 @@ public class Reminders implements Main{
          // Converting all the fetched ids into an array for easier use
          String arr[] = ids.toString().split(" ");
 
+
         // Writing message to all the ids
         boolean problem = false;
         for(int i = 0 ; i < arr.length ; i++){
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter("Reminders/" + type + "/public/" + arr[i] + ".txt"))){
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("Reminders/" + type + "/public/" + arr[i] + ".txt", true))){
                 writer.write(message);
             } catch (Exception e) {
                 System.out.println("there was a problem while writing in " + arr[i] + ".txt file");

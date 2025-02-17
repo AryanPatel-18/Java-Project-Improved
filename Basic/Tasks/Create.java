@@ -120,18 +120,20 @@ public class Create implements Main{
     }
 
     private void createStaffId(String staffId){
-        System.out.print("Enter the full name of the professor : ");
-        String name = sc.nextLine();
+        System.out.print("Enter the first name of the staff : ");
+        String firstName = sc.next();
+        System.out.print("Enter the lastname name of the staff : ");
+        String lastName = sc.next();
+        String name = firstName + " " + lastName;
         System.out.print("Enter the gender : ");
         String gender = sc.next();
-        String firstName[] = name.split(" ");
-        String id = "SF" +  firstName[0] + getId("Proffessor");
+        String id = "SF" +  firstName + getId("Staff");
         System.out.print("Enter the contact number : ");
         String number = sc.next();
         System.out.print("String enter the address : ");
         String address = sc.next();
 
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Proffessor/" + id + ".txt"))) {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Ids/Staff/" + id + ".txt"))) {
             writer.write(id + System.lineSeparator());
             writer.write(name + System.lineSeparator());
             writer.write(gender + System.lineSeparator());
@@ -139,7 +141,7 @@ public class Create implements Main{
             writer.write(address + System.lineSeparator());
             writer.write(staffId + System.lineSeparator());
         } catch (Exception e) {
-            System.out.print("There was a problem while writing the professor data");
+            System.out.print("There was a problem while writing the staff data");
         }
         registerUser(id, "Staff");
         setPassword(id, "Staff");

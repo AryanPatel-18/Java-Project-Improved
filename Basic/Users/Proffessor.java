@@ -19,7 +19,7 @@ public class Proffessor implements Main {
         for(int i = 0 ; i < students.length; i++){
             boolean present = false;
             while(true){
-                System.out.print("Was the student present : ");
+                System.out.print("Was the student " + (i+1) + "present : ");
                 String ans = sc.next();
                 if(ans.equalsIgnoreCase("yes")){
                     present = true;

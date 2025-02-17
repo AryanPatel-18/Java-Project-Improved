@@ -1,6 +1,5 @@
 registered
 IdNumber
 EnrollmentNumber
-STAP27
 STAP28
 STAP30
